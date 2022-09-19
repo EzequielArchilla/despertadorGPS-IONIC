@@ -1,16 +1,35 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
+import { initializeApp } from 'firebase/app';
+import { CapacitorConfig } from '@capacitor/cli';
 
 export const environment = {
-  production: false
+  firebase: {
+    projectId: 'fir-archillaezequiel-16fce',
+    appId: '1:506588007115:web:581024a7a551773495694e',
+    storageBucket: 'fir-archillaezequiel-16fce.appspot.com',
+    locationId: 'us-central',
+    apiKey: 'AIzaSyCgzI5rzonoxnKhxv5vj1opILbtz9vwOzw',
+    authDomain: 'fir-archillaezequiel-16fce.firebaseapp.com',
+    messagingSenderId: '506588007115',
+  },
+  production: false,
+  plugins: {
+    SplashScreen: {
+      launchShowDuration: 3000,
+      launchAutoHide: true,
+      backgroundColor: '#ffffffff',
+      androidSplashResourceName: 'splash',
+      androidScaleType: 'CENTER_CROP',
+      showSpinner: true,
+      androidSpinnerStyle: 'large',
+      iosSpinnerStyle: 'small',
+      spinnerColor: '#999999',
+      splashFullScreen: true,
+      splashImmersive: true,
+      layoutName: 'launch_screen',
+      useDialog: true,
+    },
+  },
 };
 
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+// Initialize Firebase
+export const app = initializeApp(environment.firebase);

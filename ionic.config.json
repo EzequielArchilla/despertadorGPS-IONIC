@@ -1,5 +1,5 @@
 {
-  "name": "alarmaRoboApp",
+  "name": "DespertadorGPSApp",
   "integrations": {
     "capacitor": {}
   },
